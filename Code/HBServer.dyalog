@@ -15,7 +15,7 @@
       }
 
     ∇ ct←ContentType page;ext;list
-      list←2 2⍴'pdf' 'application/pdf' 'txt' 'text/html'
+      list←3 2⍴'pdf' 'application/pdf' 'txt' 'text/html' 'css' 'text/css'
      
       ext←dtb{(1-(⌽⍵)⍳'.')↑⍵}page
      
@@ -27,13 +27,13 @@
       :Implements Constructor :Base arg
     ∇
 
-    ∇ onHtmlReq;html;headers;hd;e
+    ∇ onHtmlReq;html;headers;hdr;e
       :Access public override
       headers←0 2⍴⍬
       headers⍪←'Server' 'ClassyDyalog'
       headers⍪←'Content-Type'(ContentType Page)
       hdr←(-⍴NL)↓⊃,/{⍺,': ',⍵,NL}/headers
-      e←SendFile 0 hdr(FOLDER,Page)
+      e←SendFile 0 hdr(dtb FOLDER,Page)
       :If 1039=⊃e
           SendAnswer'404 Not Found'hdr''
       :EndIf
