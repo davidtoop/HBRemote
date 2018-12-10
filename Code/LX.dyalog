@@ -1,5 +1,5 @@
 ﻿ LX
- ⎕CY'conga'
+ 'Conga'⎕CY'conga'
  ⎕CY'fv2'
  ⍝Get utility functions
  fv.get'E' 'F'
@@ -13,6 +13,9 @@
  'C'⎕NS''
  C.Root←⎕IO⊃⎕NPARTS ⎕WSID
  C.Root,←'html'
+
+ ⍝Get Code parts
+ ⎕SE.SALT.Load'/Users/david/Dropbox/projects/samples-conga/HttpServers/HttpServerBase'
 
  ⍝Start the web server
  XX←''
