@@ -14,7 +14,8 @@
           (~⌽∧\⌽∧⌿⍵∊⍺)/⍵                              ⍝ matrix
       }
 
-    ∇ ct←ContentType page;ext;list
+    ∇ ct←ContentType page;ext;list;⎕IO
+      ⎕IO←1
       list←3 2⍴'pdf' 'application/pdf' 'txt' 'text/html' 'css' 'text/css'
      
       ext←dtb{(1-(⌽⍵)⍳'.')↑⍵}page
