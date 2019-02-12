@@ -3,7 +3,8 @@
 
 ⍝ An example of an Http Server capable of servicing requests for files in a folder
 
-    FOLDER←#.C.Root,'/' ⍝'/root/folder/' ⍝ /// Should be a constructor argument
+    FOLDER←⊃⎕nparts ⎕wsid ⍝   ←#.C.Root,'/' ⍝'/root/folder/' ⍝ /// Should be a constructor argument
+    FOLDER,←'html',¯1↑FOLDER
     ⎕io←1
 
     NL←⎕UCS 13 10
